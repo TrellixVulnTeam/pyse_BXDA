@@ -18,3 +18,12 @@ def screenshot(self,casename):
     picName =casename+"_"+timeFormat
     print("Captured the Screenshot named :",picName)
     allure.attach(self.driver.get_screenshot_as_png(),name=picName,attachment_type=allure.attachment_type.PNG)
+
+def cleanfolder(path):
+    if os.path.exists(path):
+        for i in os.listdir(path):
+            file_path = os.path.join(path,i)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+            else:
+                cleanfolder(file_path)

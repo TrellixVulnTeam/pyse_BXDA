@@ -8,12 +8,15 @@
 import pytest
 import os
 from utils.shell import Shell
+from utils.utils import cleanfolder
 
 if __name__ == '__main__':
     # 获取Report\xml和Report\html的路径
     xml_report_path = os.path.join(os.getcwd(), "report\\xml")
     html_report_path = os.path.join(os.getcwd(), "report\\html")
     set_browser = "--browser=chrome"
+
+    cleanfolder(xml_report_path)
     # 开始测试
     args = ['-s', '-q', '--alluredir', xml_report_path, set_browser]
     pytest.main(args)
