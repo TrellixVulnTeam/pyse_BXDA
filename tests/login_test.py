@@ -26,6 +26,7 @@ class TestLogin():
         casename = env.whoami()
         try:
             homepage = HomePage(driver)
+            driver.implicitly_wait(15)
             homepage.click_welcome()
             homepage.click_logout()
             env.screenshot(self,casename)

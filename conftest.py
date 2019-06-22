@@ -1,6 +1,7 @@
 # coding=utf-8
 import pytest
 from selenium import webdriver
+import os
 
 #Get browser name from arguments, use parser as it is
 def pytest_addoption(parser):
@@ -11,6 +12,7 @@ def pytest_addoption(parser):
 @pytest.fixture(scope='class')
 def test_setup(request):
     browser = request.config.getoption("--browser")
+    #driver_path = os.path.join(os.getcwd(),"venv\\Script")
 
     if browser =="chrome":
         driver = webdriver.Chrome()

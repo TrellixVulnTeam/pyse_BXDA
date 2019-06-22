@@ -12,7 +12,7 @@ from utils.utils import cleanfolder
 
 if __name__ == '__main__':
     # 获取Report\xml和Report\html的路径
-    xml_report_path = os.path.join(os.getcwd(), "report\\xml")
+    xml_report_path = os.path.join(os.getcwd(), "report\\json")
     html_report_path = os.path.join(os.getcwd(), "report\\html")
     set_browser = "--browser=chrome"
 
