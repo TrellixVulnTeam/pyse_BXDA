@@ -27,9 +27,9 @@ class TestLogin():
         try:
             homepage = HomePage(driver)
             driver.implicitly_wait(15)
+            env.screenshot(self, casename)
             homepage.click_welcome()
             homepage.click_logout()
-            env.screenshot(self,casename)
             x = driver.title
             assert x == "OrangeHRM"
         except AssertionError as error:
